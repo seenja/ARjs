@@ -1789,7 +1789,7 @@ ARjs.Source.prototype.onResizeElement = function () {
         const bounds = THREEx.wrapperElement.getBoundingClientRect();
         screenWidth = THREEx.wrapperElement.offsetWidth;
         screenHeight = THREEx.wrapperElement.offsetHeight;
-        this.domElement.style.top = bounds.top + 'px';
+        //this.domElement.style.top = bounds.top + 'px';
         //console.log(screenWidth, screenHeight)
     } // edit sv
 
