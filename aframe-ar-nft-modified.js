@@ -357,7 +357,7 @@ ARjs.MarkerControls = THREEx.ArMarkerControls = function (context, object3d, par
         // url of the descriptors of image - IIF type='nft'
         descriptorsUrl: null,
         // change matrix mode - [modelViewMatrix, cameraTransformMatrix]
-        changeMatrixMode: 'cameraTransformMatrix', // edit sv 'modelViewMatrix' -> 'cameraTransformMatrix'
+        changeMatrixMode: 'modelViewMatrix',
         // minimal confidence in the marke recognition - between [0, 1] - default to 1
         minConfidence: 0.6,
         // turn on/off camera smoothing
@@ -2727,7 +2727,7 @@ ARjs.MarkersAreaControls = THREEx.ArMultiMarkerControls = function(arToolkitCont
 		// list of pose for each subMarker relative to the origin
 		subMarkerPoses: parameters.subMarkerPoses,
 		// change matrix mode - [modelViewMatrix, cameraTransformMatrix]
-		changeMatrixMode : parameters.changeMatrixMode !== undefined ? parameters.changeMatrixMode : 'cameraTransformMatrix', // edit sv
+		changeMatrixMode : parameters.changeMatrixMode !== undefined ? parameters.changeMatrixMode : 'modelViewMatrix',
 	}
 	
 	this.object3d.visible = false
@@ -3635,7 +3635,7 @@ AFRAME.registerComponent('arjs-anchor', {
         },
         changeMatrixMode: {
             type: 'string',
-            default: 'cameraTransformMatrix', // edit sv 'modelViewMatrix' -> 'cameraTransformMatrix'
+            default: 'modelViewMatrix',
         },
         minConfidence: {
             type: 'number',
@@ -3724,7 +3724,6 @@ AFRAME.registerComponent('arjs-anchor', {
                 markerParameters.type = _this.data.type
                 markerParameters.descriptorsUrl = _this.data.descriptorsUrl;
                 markerParameters.markersAreaEnabled = false
-                markerParameters.changeMatrixMode: 'cameraTransformMatrix' // edit sv added line
             }
 
             markerParameters.minConfidence = _this.data.minConfidence;
